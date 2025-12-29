@@ -1,12 +1,13 @@
-# NPM Publishing Workflow Guide
+# PNPM Publishing Workflow Guide
 
-Complete guide for publishing and updating the urkit package on npm.
+Complete guide for publishing and updating the urkit-ui package on npm using pnpm.
 
 ## Package Information
 
 - **Package**: [urkit-ui](https://www.npmjs.com/package/urkit-ui)
 - **Current Version**: 0.1.5
 - **Registry**: npm public registry
+- **Package Manager**: pnpm
 - **GitHub**: [jaeel29/urkit-ui](https://github.com/jaeel29/urkit-ui)
 
 ## Prerequisites
@@ -16,13 +17,13 @@ Complete guide for publishing and updating the urkit package on npm.
 Ensure you're logged in to npm:
 
 ```bash
-npm whoami
+pnpm whoami
 ```
 
 If not logged in:
 
 ```bash
-npm login
+pnpm login
 ```
 
 ### 2. Verify Package Access
@@ -30,7 +31,7 @@ npm login
 Check your access to the urkit-ui package:
 
 ```bash
-npm owner ls urkit-ui
+pnpm owner ls urkit-ui
 ```
 
 ## Publishing Updates
@@ -39,13 +40,13 @@ npm owner ls urkit-ui
 
 ```bash
 # Patch version (0.1.5 → 0.1.6) - Bug fixes
-npm version patch && npm run release
+pnpm version patch && pnpm run release
 
 # Minor version (0.1.5 → 0.2.0) - New features
-npm version minor && npm run release
+pnpm version minor && pnpm run release
 
 # Major version (0.1.5 → 1.0.0) - Breaking changes
-npm version major && npm run release
+pnpm version major && pnpm run release
 ```
 
 ### Detailed Workflow
@@ -55,10 +56,10 @@ npm version major && npm run release
 Before publishing, ensure:
 
 - [ ] All changes are committed to git
-- [ ] Tests pass: `npm test`
-- [ ] Linting passes: `npm run lint`
-- [ ] TypeScript types are valid: `npm run test:types`
-- [ ] Build succeeds: `npm run prepack`
+- [ ] Tests pass: `pnpm test`
+- [ ] Linting passes: `pnpm run lint`
+- [ ] TypeScript types are valid: `pnpm run test:types`
+- [ ] Build succeeds: `pnpm run prepack`
 - [ ] Documentation is updated (README, CHANGELOG, etc.)
 
 #### 2. Version Your Changes
@@ -67,23 +68,23 @@ Choose the appropriate version bump based on [Semantic Versioning](https://semve
 
 **PATCH (0.1.5 → 0.1.6)** - Backward compatible bug fixes:
 ```bash
-npm version patch
+pnpm version patch
 ```
 Examples: Bug fixes, documentation updates, dependency updates
 
 **MINOR (0.1.5 → 0.2.0)** - New backward compatible features:
 ```bash
-npm version minor
+pnpm version minor
 ```
 Examples: New components, new features, new composables
 
 **MAJOR (0.1.5 → 1.0.0)** - Breaking changes:
 ```bash
-npm version major
+pnpm version major
 ```
 Examples: API changes, removed features, renamed components
 
-The `npm version` command will:
+The `pnpm version` command will:
 - Update version in package.json
 - Create a git commit with message "v{version}"
 - Create a git tag "v{version}"
@@ -93,23 +94,23 @@ The `npm version` command will:
 Use the release script which handles everything:
 
 ```bash
-npm run release
+pnpm run release
 ```
 
 This script will:
-1. Run linting (`npm run lint`)
-2. Build the package (`npm run prepack`)
-3. Publish to npm (`npm publish`)
+1. Run linting (`pnpm run lint`)
+2. Build the package (`pnpm run prepack`)
+3. Publish to npm (`pnpm publish`)
 4. Push commits and tags to GitHub (`git push --follow-tags`)
 
 **OR** publish manually:
 
 ```bash
 # Build the package
-npm run prepack
+pnpm run prepack
 
 # Publish to npm
-npm publish
+pnpm publish
 
 # Push to GitHub
 git push --follow-tags
@@ -120,7 +121,7 @@ git push --follow-tags
 Check that your package updated on npm:
 
 ```bash
-npm view urkit-ui version
+pnpm view urkit-ui version
 ```
 
 Visit: [https://www.npmjs.com/package/urkit-ui](https://www.npmjs.com/package/urkit-ui)
@@ -137,10 +138,10 @@ Visit: [https://www.npmjs.com/package/urkit-ui](https://www.npmjs.com/package/ur
 
 ### Git Workflow Integration
 
-The npm version command creates git commits and tags:
+The pnpm version command creates git commits and tags:
 
 ```bash
-# After npm version patch
+# After pnpm version patch
 git log -1
 # Shows: "v0.1.6"
 
@@ -164,8 +165,8 @@ git add .
 git commit -m "fix: correct button styling issue"
 
 # 2. Version and publish
-npm version patch
-npm run release
+pnpm version patch
+pnpm run release
 ```
 
 ### Publishing a New Feature
@@ -176,8 +177,8 @@ git add .
 git commit -m "feat: add new Card component"
 
 # 2. Version and publish
-npm version minor
-npm run release
+pnpm version minor
+pnpm run release
 ```
 
 ### Publishing a Breaking Change
@@ -190,8 +191,8 @@ git commit -m "feat!: rename Button to UButton for consistency"
 # 2. Update documentation about breaking changes
 
 # 3. Version and publish
-npm version major
-npm run release
+pnpm version major
+pnpm run release
 ```
 
 ## Troubleshooting
@@ -201,8 +202,8 @@ npm run release
 Ensure you're logged in as the package owner:
 
 ```bash
-npm whoami
-npm owner ls urkit-ui
+pnpm whoami
+pnpm owner ls urkit-ui
 ```
 
 ### "Version already exists"
@@ -211,10 +212,10 @@ You tried to publish a version that already exists:
 
 ```bash
 # Check current npm version
-npm view urkit-ui version
+pnpm view urkit-ui version
 
 # Update your package.json version to be higher
-npm version patch
+pnpm version patch
 ```
 
 ### Build Fails During Publish
@@ -223,13 +224,13 @@ The prepack script must succeed:
 
 ```bash
 # Test the build manually
-npm run prepack
+pnpm run prepack
 
 # Check for TypeScript errors
-npm run test:types
+pnpm run test:types
 
 # Check for linting errors
-npm run lint
+pnpm run lint
 ```
 
 ### Tags Not Pushed to GitHub
@@ -251,12 +252,12 @@ git push --follow-tags
 5. **Monitor downloads**: Check npm stats to track package usage
 6. **Respond to issues**: Monitor GitHub issues and npm for user feedback
 
-## NPM Scripts Reference
+## PNPM Scripts Reference
 
 ```json
 {
-  "prepack": "nuxt-module-build build",        // Builds dist/ before npm publish
-  "release": "npm run lint && npm run prepack && npm publish && git push --follow-tags",
+  "prepack": "nuxt-module-build build",        // Builds dist/ before pnpm publish
+  "release": "pnpm run lint && pnpm run prepack && pnpm publish && git push --follow-tags",
   "lint": "eslint .",                          // Code quality check
   "test": "vitest run",                        // Run tests
   "test:types": "vue-tsc --noEmit"            // TypeScript validation
@@ -302,7 +303,7 @@ Before each release:
 After publishing:
 
 - [ ] Verify version on npm
-- [ ] Test installation: `npm install urkit-ui@latest`
+- [ ] Test installation: `pnpm install urkit-ui@latest`
 - [ ] Create GitHub release with changelog
 - [ ] Announce update (if significant)
 - [ ] Monitor for issues
@@ -312,3 +313,4 @@ After publishing:
 - **NPM Package**: https://www.npmjs.com/package/urkit-ui
 - **GitHub Issues**: https://github.com/jaeel29/urkit-ui/issues
 - **Documentation**: See README.md
+- **Package Manager**: pnpm
