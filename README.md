@@ -18,7 +18,7 @@ A modern, accessible UI component library for Nuxt 4 with custom CSS architectur
 
 ## 📦 Available Components
 
-Currently available components in v0.1.5:
+Currently available components in v0.2.0:
 
 | Component | Description | Status |
 |-----------|-------------|--------|
@@ -184,26 +184,27 @@ Urkit includes a flexible icon system with namespace support and automatic cachi
 
 The module includes essential icons to get you started:
 
-| Icon | Name | Usage |
-|------|------|-------|
-| 👁️ | `icons:show` | Password toggle (show) |
-| 🙈 | `icons:hide` | Password toggle (hide) |
-| ⏳ | `icons:loader-icon` | Loading states |
-| 🔍 | `icons:search` | Search functionality |
-| ❌ | `icons:toast-close` | Close/dismiss actions |
-| ❤️ | `icons:heart` | Like/favorite |
-| ⭐ | `icons:star` | Rating/favorites |
-| 👤 | `icons:profile` | User/account |
-| 📋 | `icons:copy` | Copy action |
-| ⬇️ | `icons:arrow-down` | Dropdowns/navigation |
+**Alert Icons** (Filled style):
+- 🚨 `icons:alert-error` - Error alert icon
+- ⚠️ `icons:alert-warning` - Warning alert icon
+- ✅ `icons:alert-success` - Success alert icon
+- ℹ️ `icons:alert-info` - Information alert icon
+- ✨ `icons:alert-feature` - Feature announcement icon
+
+**UI Icons** (Outlined style):
+- ❌ `icons:close` - Close/dismiss icon (16×16)
+- 🔍 `icons:search` - Search icon (24×24)
+- 👁️ `icons:show` - Show password icon (24×24)
+- 🙈 `icons:hide` - Hide password icon (24×24)
 
 ```vue
 <!-- Use included icons -->
-<UrIcon name="icons:search" />
-<UrIcon name="icons:heart" />
+<UrIcon name="icons:search" :size="24" />
+<UrIcon name="icons:alert-success" :size="20" />
+<UrIcon name="icons:close" :size="16" />
 ```
 
-**💡 For production**: Add your own icons! The included icons are minimal for testing purposes.
+**💡 All icons use `currentColor` for dynamic theming.** See [ICONS.md](./ICONS.md) for complete documentation.
 
 ### Custom Icons
 
@@ -226,7 +227,7 @@ your-app/
 export default defineNuxtConfig({
   modules: ['urkit-ui'],
 
-  urkitUi: {
+  urkit: {
     iconNamespaces: {
       icons: '/assets/icons',      // Default
       logos: '/assets/logos',      // Default
@@ -246,7 +247,7 @@ Customize Urkit UI in your `nuxt.config.ts`:
 export default defineNuxtConfig({
   modules: ['urkit-ui'],
 
-  urkitUi: {
+  urkit: {
     // Customize component prefix (default: 'Ur')
     prefix: 'Ur',
 
@@ -278,7 +279,7 @@ Urkit UI uses a purple theme by default. Easily customize to match your brand:
 export default defineNuxtConfig({
   modules: ['urkit-ui'],
 
-  urkitUi: {
+  urkit: {
     colors: {
       primary: {
         50: '#f0f9ff',
