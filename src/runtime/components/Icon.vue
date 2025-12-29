@@ -91,6 +91,7 @@ const processedSvgContent = computed(() => {
   const viewBox = getViewBox(namespace, iconName)
 
   // Create a complete SVG with the inner content and proper sizing
+  // Default to fill="none" for outlined icons
   return `<svg width="${size}" height="${size}" viewBox="${viewBox}" fill="none" xmlns="http://www.w3.org/2000/svg">${iconContent.value}</svg>`
 })
 </script>

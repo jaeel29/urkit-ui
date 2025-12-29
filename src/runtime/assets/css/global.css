@@ -175,3 +175,31 @@ html {
 html:hover {
   scrollbar-color: var(--neutral-4) transparent;
 }
+
+/* Alert Component Variables */
+:root {
+  /* Alert Error Colors */
+  --alert-error-bg: #fb3748;
+  --alert-error-light: #fecaca;
+  --alert-error-lighter: #fef2f2;
+
+  /* Alert Warning Colors */
+  --alert-warning-bg: #fa731a;
+  --alert-warning-light: #fff2e4;
+  --alert-warning-lighter: #fff7ed;
+
+  /* Alert Success Colors */
+  --alert-success-bg: #21c16b;
+  --alert-success-light: #bbf7d0;
+  --alert-success-lighter: #f0fdf4;
+
+  /* Alert Info Colors */
+  --alert-info-bg: #335cff;
+  --alert-info-light: #dbeafe;
+  --alert-info-lighter: #eff6ff;
+
+  /* Alert Feature Colors */
+  --alert-feature-bg: #7d52f4;
+  --alert-feature-light: #e9d5ff;
+  --alert-feature-lighter: #faf5ff;
+}

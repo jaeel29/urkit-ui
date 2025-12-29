@@ -25,6 +25,8 @@ Currently available components in v0.1.5:
 | **UrButton** | Full-featured button with variants, sizes, loading states, and icons | ✅ Stable |
 | **UrInput** | Comprehensive input component with validation, password toggle, icons, and select | ✅ Stable |
 | **UrIcon** | Flexible icon system with namespace support | ✅ Stable |
+| **UrAlert** | Alert component for messages and notifications with multiple variants and statuses | ✅ Stable |
+| **UrBadge** | Badge component for labels and status indicators with colors and variants | ✅ Stable |
 
 ### Coming Soon
 
@@ -129,13 +131,58 @@ Comprehensive input component with validation, icons, and advanced features.
 - Select dropdown
 - Disabled and error states
 
+### Alert
+
+Alert component for displaying important messages and notifications.
+
+```vue
+<UrAlert
+  status="success"
+  title="Success!"
+  description="Your changes have been saved."
+  :dismissable="true"
+  @dismiss="handleDismiss"
+/>
+```
+
+**Variants**: `filled`, `light`, `lighter`, `stroke`
+**Sizes**: `xsmall`, `small`, `large`
+**Statuses**: `error`, `warning`, `success`, `information`, `feature`
+
+**Features**:
+- Multiple variants and sizes
+- 5 status types with unique icons
+- Optional description and action buttons
+- Dismissable with close button
+- Slots for custom content
+
+### Badge
+
+Badge component for labels and status indicators.
+
+```vue
+<UrBadge
+  variant="filled"
+  size="medium"
+  color="blue"
+>
+  New
+</UrBadge>
+```
+
+**Variants**: `filled`, `light`, `lighter`, `stroke`
+**Sizes**: `small`, `medium`, `large`
+**Colors**: `gray`, `blue`, `orange`, `red`, `green`, `yellow`, `purple`, `sky`, `pink`, `teal`
+
 ## 🎨 Icon System
 
-Urkit includes a flexible icon system with namespaces.
+Urkit includes a flexible icon system with namespace support and automatic caching.
 
-### Included Icons (for testing)
+**📘 [Complete Icon Documentation](./ICONS.md)** - Usage, custom icons, and advanced configuration
 
-The module includes 10 essential icons to get you started:
+### Included Icons
+
+The module includes essential icons to get you started:
 
 | Icon | Name | Usage |
 |------|------|-------|
@@ -254,6 +301,7 @@ export default defineNuxtConfig({
 ## 📖 Documentation
 
 - **[Complete Usage Guide](./USAGE.md)** - Detailed component documentation and examples
+- **[Icon System Guide](./ICONS.md)** - Icon usage, custom icons, and namespaces
 - **[Color Customization](./COLORS.md)** - Brand color customization guide
 - **[Architecture](./ARCHITECTURE.md)** - Technical architecture and asset management
 
