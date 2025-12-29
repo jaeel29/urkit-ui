@@ -1,6 +1,6 @@
 {
   "name": "urkit-ui",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "A modern, accessible UI component library for Nuxt 4 with custom CSS architecture",
   "author": "Jaber Elferk <elferkjaber@gmail.com>",
   "license": "MIT",
