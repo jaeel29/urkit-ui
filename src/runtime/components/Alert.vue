@@ -188,11 +188,6 @@ const iconSize = computed(() => {
   margin-top: 2px;
 }
 
-/* Override default outline style for alert icons - make them filled */
-.alert__icon :deep(svg) {
-  fill: currentColor;
-}
-
 .alert__text {
   flex: 1;
   display: flex;

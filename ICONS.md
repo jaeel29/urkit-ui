@@ -15,11 +15,11 @@ urkit-ui includes a flexible icon system that supports both built-in and custom 
 The package includes essential icons that are ready to use. All icons use `currentColor` for dynamic theming.
 
 ### Alert Icons
-- `icons:alert-error` - Error alert icon (filled)
-- `icons:alert-warning` - Warning alert icon (filled)
-- `icons:alert-success` - Success alert icon (filled)
-- `icons:alert-info` - Information alert icon (filled)
-- `icons:alert-feature` - Feature announcement icon (filled)
+- `icons:alert-error` - Error alert icon (outlined)
+- `icons:alert-warning` - Warning alert icon (outlined)
+- `icons:alert-success` - Success alert icon (outlined)
+- `icons:alert-info` - Information alert icon (outlined)
+- `icons:alert-feature` - Feature announcement icon (outlined)
 
 ### UI Icons
 - `icons:close` - Close/dismiss icon (16×16, outlined)

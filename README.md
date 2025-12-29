@@ -184,7 +184,7 @@ Urkit includes a flexible icon system with namespace support and automatic cachi
 
 The module includes essential icons to get you started:
 
-**Alert Icons** (Filled style):
+**Alert Icons** (Outlined style):
 - 🚨 `icons:alert-error` - Error alert icon
 - ⚠️ `icons:alert-warning` - Warning alert icon
 - ✅ `icons:alert-success` - Success alert icon

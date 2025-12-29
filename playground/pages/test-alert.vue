@@ -13,26 +13,31 @@
           status="error"
           title="Error Alert"
           description="This is an error alert message."
+          size="large"
         />
         <UrAlert
           status="warning"
           title="Warning Alert"
           description="This is a warning alert message."
+          size="large"
         />
         <UrAlert
           status="success"
           title="Success Alert"
           description="This is a success alert message."
+          size="large"
         />
         <UrAlert
           status="information"
           title="Information Alert"
           description="This is an information alert message."
+          size="large"
         />
         <UrAlert
           status="feature"
           title="Feature Alert"
           description="This is a feature announcement alert."
+          size="large"
         />
       </div>
     </section>
@@ -97,18 +102,9 @@
     <section>
       <h2>Without Description (compact layout)</h2>
       <div class="alerts-grid">
-        <UrAlert
-          status="error"
-          title="Error without description"
-        />
-        <UrAlert
-          status="warning"
-          title="Warning without description"
-        />
-        <UrAlert
-          status="success"
-          title="Success without description"
-        />
+        <UrAlert status="error" title="Error without description" />
+        <UrAlert status="warning" title="Warning without description" />
+        <UrAlert status="success" title="Success without description" />
       </div>
     </section>
 
@@ -171,7 +167,11 @@
           :dismissable="true"
           @dismiss="showAlert2 = false"
         />
-        <button v-if="!showAlert1 || !showAlert2" @click="resetAlerts" class="reset-btn">
+        <button
+          v-if="!showAlert1 || !showAlert2"
+          @click="resetAlerts"
+          class="reset-btn"
+        >
           Reset Dismissed Alerts
         </button>
       </div>
@@ -288,24 +288,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
 // Dismissable alerts state
-const showAlert1 = ref(true)
-const showAlert2 = ref(true)
+const showAlert1 = ref(true);
+const showAlert2 = ref(true);
 
 const resetAlerts = () => {
-  showAlert1.value = true
-  showAlert2.value = true
-}
+  showAlert1.value = true;
+  showAlert2.value = true;
+};
 
 const handleCustomAction = () => {
-  alert('Custom action clicked!')
-}
+  alert("Custom action clicked!");
+};
 
 // Matrix data
-const variants = ['filled', 'light', 'lighter', 'stroke'] as const
-const statuses = ['error', 'warning', 'success', 'information', 'feature'] as const
+const variants = ["filled", "light", "lighter", "stroke"] as const;
+const statuses = [
+  "error",
+  "warning",
+  "success",
+  "information",
+  "feature",
+] as const;
 </script>
 
 <style scoped>
@@ -313,7 +319,7 @@ const statuses = ['error', 'warning', 'success', 'information', 'feature'] as co
   padding: 40px;
   max-width: 1400px;
   margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .header {
