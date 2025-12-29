@@ -1,0 +1,177 @@
+/* @import 'highlight.js/styles/github-dark.css'; */
+
+@font-face {
+  font-family: 'InterFull';
+  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Instrument';
+  src: url('/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Instrument Italic';
+  src: url('/fonts/Instrument_Serif/InstrumentSerif-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  background-color: var(--white);
+  font-family: 'InterFull', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-feature-settings:
+    'salt' on,
+    'ss01' on,
+    /* "ss02" on,  */ 'ss03' on,
+    'ss07' on,
+    'ss08' on,
+    'tnum' on,
+    'cv01' 1,
+    'cv02' 1,
+    'cv03' 1,
+    'cv04' 1,
+    'cv05' 1,
+    'cv06' 1,
+    'cv08' 1,
+    'cv09' 1,
+    'cv10' 1,
+    'cv12' 1,
+    'cv11' 1,
+    'cv13' 1,
+    'calt' 1,
+    'liga' 1;
+  color: var(--white);
+}
+
+body.no-scroll {
+  overflow: hidden !important;
+}
+
+* {
+  /* outline: 1px solid lime; */
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0;
+}
+
+#__nuxt {
+  min-height: inherit;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  display: inline-block;
+}
+
+.trading-heading {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.b-r {
+  border: 1px solid red;
+}
+
+.b-l {
+  border: 1px solid lime;
+}
+
+.b-y {
+  border: 1px solid yellow;
+}
+
+.b-g {
+  border: 1px solid green;
+}
+
+.b-b {
+  border: 1px solid blue;
+}
+
+.section-divider {
+  height: 1px;
+  background: var(--neutral-3);
+  margin: 56px 0;
+  border: none;
+}
+
+/* Global Page Transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(10px);
+}
+
+.page-enter-to,
+.page-leave-from {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+/* Custom Text Selection Styling */
+::selection {
+  background-color: var(--neutral-3);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background-color: var(--neutral-3);
+  text-shadow: none;
+}
+
+/* Global Scrollbar Styling */
+/* Webkit/Chromium browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Show scrollbar only when hovering over the scrollable element */
+body:hover::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-4);
+}
+
+body:hover::-webkit-scrollbar-thumb:hover {
+  background-color: var(--neutral-6);
+}
+
+/* Firefox scrollbar styling */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+html:hover {
+  scrollbar-color: var(--neutral-4) transparent;
+}

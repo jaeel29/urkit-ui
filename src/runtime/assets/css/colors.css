@@ -1,0 +1,83 @@
+/* Base Light Mode (already present) */
+:root {
+  --white: #ffffff;
+  --black: #000;
+
+  --primary-50: #f2f0ff;
+  --primary-100: #d6d2ff;
+  --primary-200: #c2bcff;
+  --primary-300: #a79dff;
+  --primary-400: #958aff;
+  --primary-500: #7b6dff;
+  --primary-600: #7063e8;
+  --primary-700: #574db5;
+  --primary-800: #443c8c;
+  --primary-900: #342e6b;
+
+  --neutral-1: #fdfdfd;
+  --neutral-2: #f6f6f7;
+  --neutral-3: #f1f1f2;
+  --neutral-4: #dddcdf;
+  --neutral-5: #c6c5ca;
+  --neutral-6: #9897a0;
+  --neutral-7: #6a6876;
+  --neutral-8: #575665;
+  --neutral-9: #3c3a4c;
+  --neutral-10: #353345;
+  --neutral-11: #2b2a3d;
+  --neutral-12: #19172c;
+
+  /* Supporting colors */
+  --success-light: #b8f2d8;
+  --success: #2ebd85;
+  --success-dark: #13703f;
+  --success-contrast: #004f0d;
+
+  --error-light: #ffc7c7;
+  --error: #f6465d;
+  --error-dark: #841927;
+  --error-contrast: #5a101a;
+
+  --info-light: #cce6ff;
+  --info: #1994ff;
+  --info-dark: #0f5999;
+  --info-contrast: #072f52;
+
+  --warning-light: #ffe7b3;
+  --warning: #ffa913;
+  --warning-dark: #99640b;
+  --warning-contrast: #664207;
+
+  --accent-light: #e0cfff;
+  --accent: #7b6dff;
+  --accent-dark: #574db5;
+  --accent-contrast: #342e6b;
+
+  --req-green: #21c16b;
+
+  /* Alert-specific colors */
+  --alert-error-bg: #fb3748;
+  --alert-error-light: #ffc1c5;
+  --alert-error-lighter: #ffebec;
+  --alert-error-border: #f87171;
+
+  --alert-warning-bg: #fa731a;
+  --alert-warning-light: #ffd9c0;
+  --alert-warning-lighter: #fff3eb;
+  --alert-warning-border: #fbbf24;
+
+  --alert-success-bg: #21c16b;
+  --alert-success-light: #c1f5da;
+  --alert-success-lighter: #e0faec;
+  --alert-success-border: #34d399;
+
+  --alert-info-bg: #335cff;
+  --alert-info-light: #c0d5ff;
+  --alert-info-lighter: #ebf1ff;
+  --alert-info-border: #60a5fa;
+
+  --alert-feature-bg: #7b7b7b;
+  --alert-feature-light: #ebebeb;
+  --alert-feature-lighter: #f5f5f5;
+  --alert-feature-border: #9ca3af;
+}

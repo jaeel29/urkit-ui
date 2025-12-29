@@ -1,0 +1,706 @@
+/* =================================
+   SHARED FORM FIELD STYLES
+   Input & TextArea Components
+   ================================= */
+
+/* =================================
+   FIELD WRAPPER
+   ================================= */
+
+.field-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-wrapper.has-error {
+  /* Error state handled by container */
+}
+
+.field-wrapper.is-disabled {
+  /* Disabled state handled by container */
+}
+
+/* =================================
+   FIELD LABEL
+   ================================= */
+
+.field-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--neutral-10);
+  margin: 0;
+  line-height: 14px;
+  width: 100%;
+}
+
+.field-wrapper.is-disabled .field-label {
+  color: var(--neutral-6);
+}
+
+/* =================================
+   FIELD CONTAINER
+   ================================= */
+
+.field-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  background: var(--white);
+  transition: all 0.2s ease;
+  width: 100%;
+
+  box-shadow:
+    0 0 0 1px var(--neutral-4),
+    0 0 #0000,
+    0 0 #0000,
+    0 1px 2px 0 #0a0d1408;
+}
+
+/* Container for textarea */
+.field-container--textarea {
+  align-items: stretch;
+  flex-direction: column;
+}
+
+/* Container Sizes */
+.field-container--sm {
+  height: 32px;
+}
+
+.field-container--md {
+  height: 35px;
+}
+
+.field-container--lg {
+  height: 40px;
+}
+
+/* TextArea container sizes */
+.field-container--textarea.field-container--sm {
+  min-height: 80px;
+  height: auto;
+}
+
+.field-container--textarea.field-container--md {
+  min-height: 90px;
+  height: auto;
+}
+
+.field-container--textarea.field-container--lg {
+  min-height: 100px;
+  height: auto;
+}
+
+/* Container States */
+.field-container--focused {
+  box-shadow:
+    0 0 0 1.5px var(--primary-500),
+    0 0 0 3.5px var(--white),
+    0 0 0 5px var(--primary-50);
+}
+
+.field-container--focused .field-input::placeholder,
+.field-container--focused .field-textarea::placeholder {
+  color: var(--neutral-12);
+  transition: color 0.3s ease-out;
+}
+
+.field-container--error {
+  border-color: var(--error);
+  box-shadow:
+    0 0 0 1.5px var(--error),
+    0 0 0 3.5px var(--white),
+    0 0 0 5px rgba(246, 70, 93, 0.1);
+}
+
+.field-container--disabled {
+  background: var(--neutral-2);
+  border-color: var(--neutral-3);
+}
+
+.field-container:hover:not(.field-container--disabled):not(.field-container--focused):not(.field-container--error) {
+  background: var(--neutral-2);
+  box-shadow: 0 0 0 1px var(--neutral-2);
+}
+
+.field-container:hover:not(.field-container--disabled):not(.field-container--error) .field-input::placeholder,
+.field-container:hover:not(.field-container--disabled):not(.field-container--error) .field-textarea::placeholder {
+  color: var(--neutral-8);
+  transition: color 0.3s ease-out;
+}
+
+/* =================================
+   FIELD INPUT/TEXTAREA
+   ================================= */
+
+.field-input,
+.field-textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--neutral-12);
+  line-height: 1.4;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.field-input {
+  flex: 1;
+  padding: 0 12px;
+  height: 100%;
+}
+
+.field-textarea {
+  padding: 12px;
+  width: 100%;
+  flex: 1;
+}
+
+.field-input::placeholder,
+.field-textarea::placeholder {
+  color: var(--neutral-6);
+  font-size: 13px;
+}
+
+.field-input:disabled,
+.field-textarea:disabled {
+  color: var(--neutral-6);
+  cursor: default;
+}
+
+/* Field with inline affixes */
+.field-input--with-inline-left-affix {
+  padding-left: 8px;
+}
+
+.field-input--with-inline-right-affix {
+  padding-right: 8px;
+}
+
+/* Adjust padding when icons are present */
+.field-container--with-left-icon .field-input {
+  padding-left: 40px;
+}
+
+.field-container--with-right-icon .field-input {
+  padding-right: 36px;
+}
+
+/* TextArea resize behavior */
+.field-textarea--resizable {
+  resize: vertical;
+  min-height: 60px;
+  max-height: none;
+  overflow-y: auto;
+  display: block;
+  flex: none;
+}
+
+.field-textarea--non-resizable {
+  resize: none;
+  flex: 1;
+}
+
+/* =================================
+   FIELD ICONS
+   ================================= */
+
+.field-icon--left {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+}
+
+.field-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neutral-6);
+  transition: color 0.2s ease;
+}
+
+.field-icon--right {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+}
+
+.field-container--focused .field-icon {
+}
+
+.field-container--error .field-icon {
+  color: var(--error);
+}
+
+.field-container--disabled .field-icon {
+  color: var(--neutral-5);
+}
+
+.password-toggle {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: var(--neutral-8);
+}
+
+.password-toggle path {
+  stroke: var(--neutral-6);
+}
+
+/* =================================
+   FIELD AFFIXES
+   ================================= */
+
+.field-affix {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 450;
+  color: var(--neutral-6);
+  background: var(--white);
+  white-space: nowrap;
+  height: 100%;
+  padding: 0 12px;
+}
+
+.field-affix--left {
+  border-right: 1px solid var(--neutral-3);
+}
+
+.field-affix--right {
+  border-left: 1px solid var(--neutral-3);
+}
+
+/* Inline Affixes */
+.field-inline-affix {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 450;
+  color: var(--neutral-6);
+  white-space: nowrap;
+  height: 100%;
+  padding: 0 12px;
+}
+
+.field-inline-affix--left {
+  padding-right: 0;
+}
+
+.field-inline-affix--right {
+  padding-left: 0;
+}
+
+/* =================================
+   FIELD BUTTON
+   ================================= */
+
+.field-button {
+  margin-left: 8px;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+/* =================================
+   SELECT DROPDOWN
+   ================================= */
+
+.field-select-container {
+  position: relative;
+  border-left: 1px solid var(--neutral-3);
+  height: 100%;
+  background: var(--white);
+}
+
+.field-select-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  height: 100%;
+  min-width: 80px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--neutral-12);
+  transition: background-color 0.2s ease;
+}
+
+.field-select-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field-select-chevron {
+  color: var(--neutral-6);
+  transition: transform 0.2s ease;
+}
+
+.field-select-trigger--open .field-select-chevron {
+  transform: rotate(180deg);
+}
+
+.field-select-dropdown {
+  min-width: 120px;
+  position: absolute;
+  top: 104%;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 4px;
+  background: var(--white);
+  border-radius: 10px;
+  margin-top: 4px;
+  overflow: hidden;
+  box-shadow:
+    0 2px 4px rgba(41, 41, 41, 0.04),
+    0 1px 2px rgba(41, 41, 41, 0.04),
+    0 0 0 1px rgba(41, 41, 41, 0.04),
+    inset 0 -0.5px 0.5px rgba(41, 41, 41, 0.08);
+}
+
+.field-select-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 8px;
+  color: var(--neutral-12);
+  transition: background-color 0.2s ease;
+}
+
+.field-select-option:hover {
+  background: var(--neutral-1);
+}
+
+.field-select-option--selected {
+  background: var(--primary-50);
+  color: var(--primary-600);
+}
+
+.field-select-option--selected .select-option-icon {
+  color: var(--primary-500);
+}
+
+.select-option-flag {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.select-option-icon {
+  color: var(--neutral-6);
+}
+
+.field-select-value .select-option-icon {
+  color: var(--primary-500);
+}
+
+.select-option-check {
+  color: var(--primary-600);
+}
+
+/* =================================
+   CHARACTER COUNTER
+   ================================= */
+
+.field-character-counter {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-size: 12px;
+  color: var(--neutral-6);
+  pointer-events: none;
+  background: var(--white);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.field-container--with-counter .field-textarea {
+  padding-bottom: 32px;
+}
+
+.counter-over-limit {
+  color: var(--error) !important;
+}
+
+/* =================================
+   HINT AND ERRORS
+   ================================= */
+
+.field-hint {
+  font-size: 13px;
+  color: var(--neutral-6);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.field-errors {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-error {
+  font-size: 13px;
+  color: var(--error);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* =================================
+   PASSWORD REQUIREMENTS
+   ================================= */
+
+.password-requirements {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.password-progress {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.progress-bar {
+  height: 4px;
+  flex: 1;
+  border-radius: 2px;
+  background-color: var(--neutral-3);
+  transition: background-color 0.3s ease;
+}
+
+.progress-bar--inactive {
+  background-color: var(--neutral-3);
+}
+
+.progress-bar--weak {
+  background-color: #fb3748; /* Red color for weak password */
+}
+
+.progress-bar--medium {
+  background-color: #fa731a; /* Orange color for medium password */
+}
+
+.progress-bar--strong {
+  background-color: var(--req-green); /* Green color for strong password */
+}
+
+.requirements-title {
+  font-size: 13px;
+  color: var(--neutral-8);
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.requirements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.requirement-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--neutral-8);
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.requirement-item.requirement-met {
+  color: var(--req-green);
+}
+
+.requirement-icon--success {
+  color: var(--req-green) !important;
+}
+
+.requirement-icon--error {
+  color: var(--neutral-6) !important;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+   ================================= */
+
+@media screen and (max-width: 768px) {
+  .field-container--sm {
+    height: 40px;
+  }
+
+  .field-container--md {
+    height: 44px;
+  }
+
+  .field-container--lg {
+    height: 48px;
+  }
+
+  .field-container--textarea.field-container--sm {
+    min-height: 90px;
+  }
+
+  .field-container--textarea.field-container--md {
+    min-height: 100px;
+  }
+
+  .field-container--textarea.field-container--lg {
+    min-height: 110px;
+  }
+
+  .field-input,
+  .field-textarea {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+/* =================================
+   RADIUS TYPE STYLES
+   ================================= */
+
+/* None radius */
+.field-container--radius-none {
+  border-radius: 0px;
+}
+
+.field-container--radius-none .field-affix--left {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.field-container--radius-none .field-affix--right {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.field-container--radius-none .field-select-container {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/* Soft radius - size aware */
+.field-container--radius-soft.field-container--sm,
+.field-container--radius-soft.field-container--md {
+  border-radius: 6px;
+}
+
+.field-container--radius-soft.field-container--sm .field-affix--left,
+.field-container--radius-soft.field-container--md .field-affix--left {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.field-container--radius-soft.field-container--sm .field-affix--right,
+.field-container--radius-soft.field-container--md .field-affix--right {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.field-container--radius-soft.field-container--sm .field-select-container,
+.field-container--radius-soft.field-container--md .field-select-container {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.field-container--radius-soft.field-container--lg {
+  border-radius: 8px;
+}
+
+.field-container--radius-soft.field-container--lg .field-affix--left {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.field-container--radius-soft.field-container--lg .field-affix--right {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.field-container--radius-soft.field-container--lg .field-select-container {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Medium radius - size aware */
+.field-container--radius-medium.field-container--sm,
+.field-container--radius-medium.field-container--md {
+  border-radius: 8px;
+}
+
+.field-container--radius-medium.field-container--sm .field-affix--left,
+.field-container--radius-medium.field-container--md .field-affix--left {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.field-container--radius-medium.field-container--sm .field-affix--right,
+.field-container--radius-medium.field-container--md .field-affix--right {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.field-container--radius-medium.field-container--sm .field-select-container,
+.field-container--radius-medium.field-container--md .field-select-container {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.field-container--radius-medium.field-container--lg {
+  border-radius: 10px;
+}
+
+.field-container--radius-medium.field-container--lg .field-affix--left {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.field-container--radius-medium.field-container--lg .field-affix--right {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.field-container--radius-medium.field-container--lg .field-select-container {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Pill radius */
+.field-container--radius-pill {
+  border-radius: 999px;
+}
+
+.field-container--radius-pill .field-affix--left {
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+
+.field-container--radius-pill .field-affix--right {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
+
+.field-container--radius-pill .field-select-container {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
