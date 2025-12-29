@@ -1,6 +1,10 @@
-# Urkit
+# Urkit UI
 
 A modern, accessible UI component library for Nuxt 4 with custom CSS architecture (no Tailwind).
+
+[![npm version](https://img.shields.io/npm/v/urkit-ui.svg)](https://www.npmjs.com/package/urkit-ui)
+[![npm downloads](https://img.shields.io/npm/dm/urkit-ui.svg)](https://www.npmjs.com/package/urkit-ui)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## ✨ Features
 
@@ -12,28 +16,49 @@ A modern, accessible UI component library for Nuxt 4 with custom CSS architectur
 - 🔧 **TypeScript** - Full TypeScript support
 - 🎯 **Auto-Import** - Components automatically available in your app
 
-## 📦 Quick Start
+## 📦 Available Components
+
+Currently available components in v0.1.5:
+
+| Component | Description | Status |
+|-----------|-------------|--------|
+| **UrButton** | Full-featured button with variants, sizes, loading states, and icons | ✅ Stable |
+| **UrInput** | Comprehensive input component with validation, password toggle, icons, and select | ✅ Stable |
+| **UrIcon** | Flexible icon system with namespace support | ✅ Stable |
+
+### Coming Soon
+
+- ✨ **UrCard** - Card container component
+- ✨ **UrModal** - Modal/dialog component
+- ✨ **UrToast** - Toast notification system
+- ✨ **UrCheckbox** - Checkbox input component
+- ✨ **UrRadio** - Radio button component
+- ✨ **UrSelect** - Dropdown select component
+- ✨ **UrTextarea** - Multi-line text input
+- And more...
+
+## 🚀 Quick Start
 
 ### Installation
 
 ```bash
-# Using pnpm
-pnpm add urkit
+# Using pnpm (recommended)
+pnpm add urkit-ui
 
 # Using npm
-npm install urkit
+npm install urkit-ui
 
 # Using yarn
-yarn add urkit
+yarn add urkit-ui
 ```
 
 ### Setup
 
-Add `urkit` to your `nuxt.config.ts`:
+Add `urkit-ui` to your `nuxt.config.ts`:
 
 ```typescript
 export default defineNuxtConfig({
-  modules: ['urkit']
+  modules: ['urkit-ui']
 })
 ```
 
@@ -152,9 +177,9 @@ your-app/
 ```typescript
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: ['urkit'],
+  modules: ['urkit-ui'],
 
-  urkit: {
+  urkitUi: {
     iconNamespaces: {
       icons: '/assets/icons',      // Default
       logos: '/assets/logos',      // Default
@@ -168,13 +193,13 @@ Then use: `<UrIcon name="custom:my-icon" />`
 
 ## ⚙️ Configuration
 
-Customize Urkit in your `nuxt.config.ts`:
+Customize Urkit UI in your `nuxt.config.ts`:
 
 ```typescript
 export default defineNuxtConfig({
-  modules: ['urkit'],
+  modules: ['urkit-ui'],
 
-  urkit: {
+  urkitUi: {
     // Customize component prefix (default: 'Ur')
     prefix: 'Ur',
 
@@ -199,14 +224,14 @@ export default defineNuxtConfig({
 
 ## 🎨 Color Customization
 
-Urkit uses a purple theme by default. Easily customize to match your brand:
+Urkit UI uses a purple theme by default. Easily customize to match your brand:
 
 ```typescript
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: ['urkit'],
+  modules: ['urkit-ui'],
 
-  urkit: {
+  urkitUi: {
     colors: {
       primary: {
         50: '#f0f9ff',
@@ -247,14 +272,18 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📬 Support
 
-- [Report Issues](https://github.com/yourusername/urkit/issues)
-- [Discussions](https://github.com/yourusername/urkit/discussions)
+- 📦 [NPM Package](https://www.npmjs.com/package/urkit-ui)
+- 🐛 [Report Issues](https://github.com/jaeel29/urkit-ui/issues)
+- 💬 [Discussions](https://github.com/jaeel29/urkit-ui/discussions)
+- 📖 [Documentation](https://github.com/jaeel29/urkit-ui#readme)
 
 ---
 
-## Development
+---
 
-This section is for contributors developing the Urkit module itself.
+## 👨‍💻 Development
+
+This section is for contributors developing the Urkit UI module itself.
 
 ### Setup
 
